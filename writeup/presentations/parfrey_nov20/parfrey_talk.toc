@@ -1,0 +1,8 @@
+\beamer@sectionintoc {1}{What is intertemporal discounting?}{4}{0}{1}
+\beamer@subsectionintoc {1}{1}{Motivation}{5}{0}{1}
+\beamer@subsectionintoc {1}{2}{The discounting problem}{10}{0}{1}
+\beamer@subsectionintoc {1}{3}{Theory and empirics}{17}{0}{1}
+\beamer@sectionintoc {2}{Discounting in an evolutionary context}{19}{0}{2}
+\beamer@subsectionintoc {2}{1}{Philosophy}{20}{0}{2}
+\beamer@subsectionintoc {2}{2}{Framework}{25}{0}{2}
+\beamer@subsectionintoc {2}{3}{Example}{34}{0}{2}

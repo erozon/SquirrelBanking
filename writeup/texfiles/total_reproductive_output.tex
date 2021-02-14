@@ -1,0 +1,30 @@
+\section{Total Reproductive Output}
+Christoph sends the following in an email: \\ \\
+
+``\ldots wondering whether it is even necessary to try to tie everything back to Lyapunov exponents in Leslie matrices. 
+Instead, I think all that is needed is to calculate the lifetime reproductive output of an individual (which follows from 
+your graphs). This is an excellent measure of fitness. The only challenge is the comparison between individuals with different life histories and, 
+in particular, different life expectancies. A reasonable approximation would be to raise the fitness of the shorter lived 
+type to some power that depends on the ratio of the two life expectancies.'' \\ \\
+
+Here is a first attempt: denote by $\int \text{LH}(a) \d a$ = RR the total expected number of offspring for an individual with life history
+LH, and as a (terrible) shorthand, denote $\mathbb{E}$ its life expectency. Propose the following measure of fitness:
+
+$$ f := \left( \int \text{ LH} (a) \d a \right)^{\frac{1}{\mathbb{E}}}.$$
+
+This looks to be somewhat arbitrary, but it actually has some nice properties.
+
+\begin{itemize}
+    \item Not replacing oneself leads to fitness $< 1$ irrespective of the life expectancy, since $r^x < 1$ for all $r\in(0,1)$ and
+        $x > 0$. 
+    \item Low life expectancies with replacement rate $> 1$ are rewarded; if $r > 1$ and $\mathbb{E}$ is large, then we have something
+        of the form $r^x$ where $x$ is large, which blows up pretty quickly. 
+    \item Comparing a smaller/sooner with a larger/later life history yields exactly the ratio of life expectancies referenced in 
+        Christoph's email:
+        \begin{align*}
+            f_{\text{SS}} = f_{\text{LL}} &\iff \left( \text{RR}_{\text{SS}} \right)^{\frac{1}{\mathbb{E}_{\text{SS}}}} =
+                \left( \text{RR}_{\text{LL}} \right)^{\frac{1}{\mathbb{E}_{\text{LL}}}} \\
+                &\iff \left( \text{RR}_{\text{SS}} \right)^{\frac{\mathbb{E}_{\text{LL}}}{\mathbb{E}_{\text{SS}}}} = \text{RR}_{\text{LL}}
+        \end{align*}
+\end{itemize}
+

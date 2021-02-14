@@ -1,0 +1,180 @@
+\documentclass[titlepage, hidelinks, 12pt]{article}
+
+
+%for custom page numbering:
+\usepackage{fancyhdr}
+
+\usepackage{lipsum}
+\usepackage{hyperref}
+\usepackage{palatino}
+\usepackage{tikz}
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+%\usepackage{breqn} % useful for breaking equations across multiple lines automatically. Breaks everything.
+
+
+\usepackage{setspace}
+%\usepackage{indentfirst} %tex default is no indent on first paragraph after heading
+\usepackage{url}
+\usepackage{amsmath, amssymb, amsfonts, amsthm}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{environ, enumerate}
+%\usepackage{mathbbol}
+%\DeclareSymbolFontAlphabet{\amsmathbb}{AMSb}
+\graphicspath{ {images/} }
+\providecommand{\keywords}[1]{\textbf{\textit{Keywords---}} #1} 
+\usepackage[format=plain,
+            labelfont={bf, it},
+            textfont=it]{caption}
+
+
+
+
+
+
+%%%%%%%%%
+% indentation
+%%%%%%%%%
+
+\setlength\parindent{0pt}
+
+\setlength{\voffset}{-1cm}
+\setlength{\textwidth}{17cm}
+\addtolength{\textheight}{2cm}
+\setlength{\footskip}{1cm}
+\addtolength{\oddsidemargin}{-2cm}
+\addtolength{\evensidemargin}{-2cm}
+
+\widowpenalty10000
+\clubpenalty10000
+
+%%%%%%%%%
+% page numbering and logo
+%%%%%%%%%
+
+\pagestyle{fancy}            
+
+\fancyhead[L]{}
+\fancyhead[C, R]{}
+\fancyfoot[L]{}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\includegraphics[scale=.35]{sb_logo_black.png}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+%Def, Lemma, Theorem, Corollary environment
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem*{proof}{Proof}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{example}{Example}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+%New commands
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\betahat}{\hat{\beta}}
+
+
+%New math operators
+\DeclareMathOperator{\ringchar}{char}
+\DeclareMathOperator{\diag}{diag}
+\renewcommand\d[1]{\:\textrm{d}#1}
+\newcommand*\diff{\mathop{\!\mathrm{d}}}
+
+\begin{document}
+
+\begin{titlepage}
+   \begin{center}
+       \vspace*{1cm}
+\Huge
+       \textbf{Squirrel Banking} \\
+\Large
+       \vspace{0.5cm}
+       Meanderings through intertemporal discounting  \\
+            
+       \vspace{4.1cm}
+       \includegraphics[scale = 1.4]{sb_logo_black.png} \\
+       \vspace*{\fill}
+       \textbf{Eric Rozon} \\
+
+            
+       Department of Mathematics\\
+       University of British Columbia\\
+       August 2021 (hopefully?) 
+            
+   \end{center}
+\end{titlepage}
+
+
+
+
+%\title{ Squirrel Banking}
+%\author{Eric Rozon - University of British Columbia}
+%\maketitle
+
+\begin{abstract}
+
+    I'll fill this in later $\ldots$ 
+    \bigskip
+
+    \begin{keywords}
+      Squirrel, squirrels, banking, squirrel banking, squirrels banking. 
+    \end{keywords}
+
+\end{abstract}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+%\section*{Acknowledgements}
+%\addcontentsline{toc}{section}{Acknowledgement}
+%My most sincere thanks are owed to Monica Nevins, without the support and guidance of whom none
+%of this project would have been possible. Monica, it was a joy and a privilege to work so
+%closely with you this semester, and I hope you are aware that my interest in mathematical research
+%is due in no small part to your enthusiasm. I would also like to thank Professor Rafal Kulik for
+%allowing me the opportunity to present part of this project during the University of Ottawa's final
+%math club meeting of 2018. Finally, if you are reading this report, then thank you. While the project
+%was stimulating enough in its own right that I do not feel it must be read by others to have been
+%worthwhile, it is also fun to think that someone else may find some joy or usefulness in my work.
+%\newpage
+\input{texfiles/outline}
+\newpage
+\input{texfiles/genesis}
+\input{texfiles/generalizations}
+\input{texfiles/twotrees}
+\input{texfiles/longpregnancy}
+\input{texfiles/measure_theory}
+\input{texfiles/survival}
+\input{texfiles/total_reproductive_output}
+\input{texfiles/moran_squirrels}
+\input{texfiles/squirrelly_bandits}
+
+\newpage
+\bibliographystyle{alpha}
+\bibliography{research}{}
+
+
+
+
+
+
+\end{document}
+
+
+

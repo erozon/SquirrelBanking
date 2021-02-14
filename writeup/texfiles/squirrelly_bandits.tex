@@ -1,0 +1,22 @@
+\section{Squirrelly Bandits}
+For Christoph's Math564, I did a project called Squirrelly Bandits. I did a writeup, so see there for the details. Broadly,
+I was surprised to find that the evolutionary objective of optimizing fitness is equivalent to a reinforcement learning
+objective via appropriate choice of discounting parameter. Specifically, I find \textit{numerical} evidence that
+$$ arg\max_{\varepsilon} \text{ Leading E-val of }B_{\varepsilon} = 
+arg\max_{\varepsilon} \sum\limits_{t = 0}^\infty \gamma^t \mathbb{E}_{\varepsilon}\left[ r_t \right].$$
+In words: the evolutionary objective of fitness maximization can be made equivalent to an RL objective by appropriate choice of 
+opportunity cost parameter. I have figured out why this is the case, and what the ``appropriate'' $\gamma$ is. \\ \\
+
+Notice that the stable age distribution of a population with inifinitely many age classes (also holds for finitely many, but
+it's a little bit more work notationally):
+$$ (n_0, n_1, n_2, n_3, \ldots) = (\Sigma, s_0 n_0, s_1 n_1, s_2 n_2, \ldots)\frac{1}{R} $$
+where $R$ is the per time step growth rate. Then $n_1 = R^{-1} s_0 n_0$, $n_2 = R^{-1} s_1n_1 = R^{-2} s_0s_1 n_0 $, and so forth. 
+Recall that fitness $\lambda$ satisfies
+$$ \lambda = \sum\limits_{a = 0}^\infty n_a \cdot b_a $$
+where $b_a$ is fecundity at age $a$. In this case, then, we have
+$$ \lambda = n_0\sum\limits_{a = 0}^\infty s_0 \cdots s_{a-1} R^{-a} \mathbb{E}\left[ r_t \right].$$
+So if survival probability is constant, as it is in squirrel banking, then by taking $\gamma = s/R$, we have that the objective of
+maximizing $\sum \gamma^t \mathbb{E}\left[ \hat r_t \right]$ maximizes fitness, where $\hat r_t$ is the reward at time $t$ conditional
+on still being alive. As an extension, even if survival probability were not constant,
+it wouldn't matter. Just bake survival into the expectation, rather than making it conditional on still being alive, and you have an opportunity
+cost parameter $\gamma = 1/R$. 

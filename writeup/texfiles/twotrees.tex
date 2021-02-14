@@ -1,0 +1,40 @@
+\section{Two trees}
+Let's now assume that squirrels are forraging around one of two
+trees: $\T_1$ or $\T_2$. Nuts from $\T_1$ are guaranteed, whereas nuts from
+$\T_2$ are stochastically determined. More specifically, $\pi_{\T_1} = 1 $ whereas 
+$$ \pi_{\T_2} = 
+\begin{cases}
+    0 & \text{ with probability } \frac{1}{2} \\
+    F_2 & \text{ with probability} \frac{1}{2}
+\end{cases}
+$$
+We see that $\T_1$ provides stability, allowing squirrels to consume one nut per day while storing another. On the
+other hand, $\T_2$  does not guarantee nuts 
+at any particular time step, but does promise a ``large'' payout on average every $2$ days.
+For fixed survival probabilities $s_0, s_1, s_2, \ldots$, we compute the fitness of the population
+at $\T_1$  (denoted $r_{\T_1}$) by determining the leading eigenvalue of the matrix from before. For squirrels foraging around $\T_2$, 
+we for now assume that they consume all surplus resources immediately (so $\betahat = 0$). Thus computing the 
+population growth rate is straightforward:
+$$ r_{\T_2} = \frac{1}{2}s_0 + \frac{1}{2}s_0 Q.$$
+A natural question: for what value of $Q$ is the growth rate at $\T_1$ equal to the growth rate at $\T_2$? That is,
+when is $r_{\T_1} = r_{\T_2}$? Simply rearranging gives:
+$$ Q = \frac{r_{\T_1} - \frac{1}{2}s_0}{\frac{1}{2}s_0}.$$
+I haven't figured out yet how to interpret this result. Notice that we can generalize: rather than $\T_2$, which pays
+out on average ever $2$ days, we can consider $\T_p$ which pays out on average every $p$ days. If
+$$ \pi_{\T_p} = 
+\begin{cases}
+    1 & \text{ with probability } 1-1/p \\
+    Q_p & \text{ with probability } 1/p,
+\end{cases}
+$$
+then we can similarly derive the result that for $r_{\T_1} = r_{\T_p}$, we require
+$$ Q_p = \frac{r - (1-\frac{1}{p})s_0}{\frac{1}{p}s_0} = p\left( \frac{r}{s_0} - 1 \right) + 1.$$
+Therefore, 
+$$ \left( \frac{Q}{1} - 1 \right)/p = \frac{r}{s_0} - 1.$$
+Why is this interesting? Well, let me tell you. In the derivation of hyperbolic discounting, 
+we derive the hyperbolic growth rate as 
+$$ h = \left( F/P - 1 \right)/T$$
+where $F$ is the future value required for equivalent benefit as a present value of $P$, and $T$ is the number
+of time period over which we discount. So we have something that looks like hyperbolic discounting.
+
+

@@ -1,0 +1,24 @@
+\contentsline {section}{\numberline {1}Outline}{2}{section.1}
+\contentsline {section}{\numberline {2}Genesis}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Squirrels}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Squirrels banking}{3}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Fitness of a homogeneous population}{4}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Optimal fitness}{4}{subsection.2.4}
+\contentsline {section}{\numberline {3}Generalizations}{5}{section.3}
+\contentsline {subsection}{\numberline {3.1}The Leslie matrix}{5}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Limiting frequency of time spent at $\mathaccentV {hat}05E{\beta }$ argument}{6}{subsection.3.2}
+\contentsline {section}{\numberline {4}QUESTIONS/COMMENTS}{6}{section.4}
+\contentsline {section}{\numberline {5}Two trees}{7}{section.5}
+\contentsline {section}{\numberline {6}Lengthy Pregnancy}{8}{section.6}
+\contentsline {section}{\numberline {7}Measure Theoretic Approach}{15}{section.7}
+\contentsline {subsection}{\numberline {7.1}For concreteness, Leslie matrices as an example}{16}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Back to abstract measure theory stuff}{17}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Corrections}{17}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Examples of life history displays}{18}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}Summing up all contributions}{19}{subsection.7.5}
+\contentsline {section}{\numberline {8}Playing with survival rates}{22}{section.8}
+\contentsline {subsection}{\numberline {8.1}Age structured model}{22}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}A conspiracy theory}{27}{subsection.8.2}
+\contentsline {section}{\numberline {9}Total Reproductive Output}{28}{section.9}
+\contentsline {section}{\numberline {10}Moran Squirrels}{29}{section.10}
+\contentsline {section}{\numberline {11}Squirrelly Bandits}{30}{section.11}

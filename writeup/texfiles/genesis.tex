@@ -1,0 +1,94 @@
+\section{Genesis}
+\subsection{Squirrels}
+Squirrels eat nuts and produce offspring. In order to eat a nut,
+a squirrel must first find a nut. Let us assume that
+squirrels find, each day, either $\pi = 0, 1,$ or $2$ nuts, and
+that the nuts found among squirrels each day are independent
+and identically distrubuted. That is,
+$$ \pi = 
+\begin{cases}
+    0 & \text{ w.p. } p_0; \\
+    1 & \text{ w.p. } p_1; \\
+    2 & \text{ w.p. } p_2. \\
+\end{cases}
+$$
+If, in a given day, a squirrel consumes no nuts, it dies. On the other hand,
+if a squrirrel consumes $k\ge 1$ nut(s), then the number of squirrels descendent
+from it the following day is $k$. So if a squirrel consumes one nut, it keeps itself
+alive; if a squirrel consumes two nuts, it keeps itself alive and also gives birth to
+one other squirrel. At this point, the model is fairly boring. A squirrel 
+goes about its daily business, finding nuts. When the shadows grow long
+in the late afternoon, a squirrel retires to its squirrely abode. Those squirrels
+fortunate enough to have happened upon two nuts throughout their day produce an offspring overnight.
+Squirrels who found a lone nut keep themselves alive but nothing more. And the poor sods who worked all
+day in vain simply go home to die. \\ \\
+Let us assume a large (or infinite) population, so that proportionally $p_0, p_1, p_2$ of the squirrels find
+$0,1,2$ nuts respectively. If $\E\pi < 1$, then our population of squirrels dies out eventually. On the other hand,
+if nuts are distributed such that $\E\pi \ge 1$, then the population lives forever and grows exponentially if 
+$\E\pi > 1$. If we instead assume an initial population of one single squirrel, the question of a population breeding
+and growing forever is somewhat more complicated (see, for instance, Galton-Watson branching processes for
+a related study which could be adapted to this context if one were so inclined). 
+
+\subsection{Squirrels banking}
+Let us now give our squirrels some autonomy, since at this point they have none. We allow a squirrel
+to save, or \textit{bank}, nuts at its discretion. Thus there is some accounting work to be done:
+for a given squirrel, we keep track of the number of nuts it has saved, say $\beta$. We assume
+that at birth, $\beta = 0$, and that $\beta\in\N$ is unbounded. Squirrels can save as much
+as their little squirrel hearts desire, so long as they can find the nuts to bank. Let us consider
+a particular family of banking/consumption schedules. We assume a squirrel has in its brain a 
+number of nuts with which it feels comfortable, call it $\betahat\in\N$, at which point it starts 
+consuming with the intent not only of staying alive, but of producing offspring. We importantly
+assume that a descendent inherits the $\betahat$ of its parent. 
+
+\begin{example}
+Consider a squirrel with $\betahat = 1$, which lives the life described in \ref{tab:eglife}.
+\begin{table}[]
+    \centering
+\begin{tabular}{|c||c|c|c|}\hline
+Day & $\pi$ & $\beta$ & Offspring \\\hline
+1   & 2                  & 1                    & 0         \\
+2   & 1                  & 1                    & 0         \\
+3   & 2                  & 1                    & 1         \\
+4   & 0                  & 0                    & 0         \\
+5   & 0                  & 0                    & 0        \\\hline
+\end{tabular}
+\caption{The life of a squirrel with $\betahat = 1.$}
+\label{tab:eglife}
+\end{table} 
+The squirrel produces one offspring in total before dying at the end of the fifth day, having
+unfortunately gone two consecutive days without finding a single nut. 
+\end{example}
+
+\subsection{Fitness of a homogeneous population}
+Given a large population of squirrels saving at the level of $\betahat$ before producing
+offspring, we investigate how that population changes in time. Intuitively, of those squirrels
+which have no banked nuts ($\beta = 0$), proportionally $p_0$ die out, $p_1$ remain at $\beta = 0$, and
+$p_2$ progress to $\beta = 1$. For squirrels with $\beta\in\left\{ 1, 2, \ldots, \betahat - 1 \right\}$, their
+cache $\beta$ increases/decreases as determined by $\pi$. Finally, squirrels content with their savings
+($\beta = \betahat$) remain where they are if they find one or two nuts, and produce an offspring in the
+latter case. Tools from the study of age-structured population dynamics can be co-opted for our purposes;
+while our population is not structured by age, it is structured by savings level. Denote
+$$ 
+L = 
+\begin{pmatrix}
+    p_1 & p_0 & 0 & 0 & \cdots & 0 & p_2 \\
+    p_2 & p_1 & p_0 & 0 &\cdots & 0 & 0 \\
+    0 & p_2 & p_1 & p_0 & \cdots & 0 & 0 \\
+    \vdots &  &   & \ddots  & & \vdots & \vdots \\
+    0 & 0 & 0 & 0 & \cdots & p_2 & p_1 + p_2
+\end{pmatrix}.
+$$
+If $n_t\in[0,1]^{\betahat+1}$ is the column vector representing the proportion of the population
+having saved to each level $\beta\in\left\{ 0, 1, \ldots, \betahat \right\}$, then 
+$n_{t+1} = L n_t$. Standard results from population dynamics tell us that the unique 
+positive eigenvalue $r$ of the matrix $L$ gives the population growth rate, or fitness. Perron-Frobenius tells
+us that if $p_2\le p_0$, $2p_2 + p_1 \le r \le 1$, whereas if $p_2 \ge  p_0$, $1\le r\le 2p_2 + p_1$. 
+\subsection{Optimal fitness}
+A natural question from the perspective of evolutionary biology arises: Is there a $\betahat$ which
+optimizes the fitness of a population? Denote $r_{\betahat}$ the fitness of a homogenous population
+saving to $\betahat$. Surprisingly (to me, at least), the answer is that 
+$\betahat = 0$ is optimal, in that $r_0 \ge r_{\betahat}$ for every $\betahat\in\N$ irrespective of the 
+distribution of nuts $\pi$. This follows by performing the simple computation of $r_0 = 2p_2 + p_1$ and
+comparing with the result from Perron-Frobenius
+
+

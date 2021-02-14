@@ -1,0 +1,49 @@
+\section{Moran Squirrels}
+Consider a Moran birth-death process with two types $A$ and $B_T$. Type $A$ has constant fitness $1$, whereas type $B_T$ has
+fitness determined by its age.
+$$ \text{Fitness of individual of type }B_T =
+\begin{cases}
+    0 & \text{if age }<T \\
+    \beta & \text{if age }\ge T
+\end{cases}
+$$
+A population consisting of exclusively $A$ types is boring. A popultion consisting of exclusively $B_T$ types is marginally more interesting,
+in that we can ask: does it reach a stable age distribution? By induction (or something, I've yet to sort out all of the details, but
+it definitely works), a population of size $N$ has stable age distribution:
+$$\left( n_0, n_1, \ldots, n_{T-1}, n_{\ge T} \right) = \left( 1, s, s^2, \ldots, s^{T-1}, \sum\limits_{t = T}^\infty s^t \right)$$
+where $s = 1 - \frac{1}{N}$ is survival probability. For $N < \infty,$ this is just an approximation, since there will necessarily be some
+stochastic fluctuations. With this stable age distribution, we can determine that
+\begin{align*}
+    \text{Average fitness of }B_T\text{ types } &= \frac{0\cdot n_{<T} + \beta\cdot n_{\ge T}}{n_B} \\
+    &= \frac{\beta \cdot \frac{s^T}{1-s}}{\frac{1}{1-s}} \\
+    &= \beta s^T
+\end{align*}
+Recall: this was all just for the case of a population consisting exclusively of $B_T$ types. If we throw in a mixture of $A$ types
+and $B_T$ types, it is not obvious how this will impact the stable age distribution of $B_T$ types. Nevertheless, if we assume that
+they hover around
+$$\left( n_0, n_1, \ldots, n_{T-1}, n_{\ge T} \right) = \left( y, ys, ys^2, \ldots, ys^{T-1}, \sum\limits_{t = T}^\infty ys^t \right)$$
+where $y$ is some constant, we find the exact same result:
+$$\text{Average fitness of }B_T\text{ types } = \beta s^{T}.$$
+We perform a system size expansion. With notation as in Evoludo.pdf, 
+\begin{itemize}
+    \item $T^+(x) = P\left( A \text{ type dies} \right)\cdot P( B \text{ type rep.}) = (1-x)\cdot \frac{\beta s^T x}{(1-x) + \beta s^T x}$
+    \item $T^-(x) = P\left( B \text{ type dies} \right)\cdot P( A \text{ type rep.}) = 
+        x\cdot \frac{1 - x}{(1 - x) + \beta s^T x}$,
+\end{itemize}
+so that the general tendency of the system is neutral (resp. in favour of $A$, $B_T$ types) whenever $T^+ - T^- = 0$, that is, whenever
+$1 - s^{T} = 0$ (resp $>0, <0$). 
+By system size expansion, large $N$, etc. etc., so on and so forth, $A$ types and $B_T$ types can coexist in infinite populations whenever
+\begin{align*}
+    1 = \beta s^{T} &\iff \beta = s^{-T}
+\end{align*}
+Thus in some sense, Moran squirrels discount exponentitally with discounting parameter $s$. It is reasonable to wonder: if $A$ and $B$ types
+survive with different probabilities, then how does this impact discounting behaviour? Answer: the daily double. We need to be careful how we set
+up the system. To encode that $B_T$ types are less (resp. more) susceptible to death than $A$ types, we introduce susceptibility parameter $u < 1$
+(resp. $> 1$). The individual to die is selected with probability proportional to its susceptibility, so that we have
+\begin{itemize}
+    \item $T^+(x) = P\left( A \text{ type dies} \right)\cdot P( B \text{ type rep.}) = \frac{1-x}{(1-x) + ux}\cdot \frac{\beta s^T x}{(1-x) + \beta s^T x}$
+    \item $T^-(x) = P\left( B \text{ type dies} \right)\cdot P( A \text{ type rep.}) = 
+        \frac{ux}{(1-x) + ux}\cdot \frac{1 - x}{(1 - x) + \beta s^T x}$.
+\end{itemize}
+Just as above, the general tendency of the system is neutral whenever $T^+ - T^- = 0$, which occurs precisely when 
+$$ \beta s^T = u \iff \beta = u\cdot s^{-T}.$$

@@ -1,0 +1,134 @@
+\documentclass{beamer}
+
+\setbeamertemplate{footline}[frame number]
+\graphicspath{ {images/} }
+
+
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage[space]{grffile}
+\usepackage{sansmathaccent}
+%\pdfmapfile{+sansmathaccent.map}
+
+\newtheorem{proposition}[theorem]{Proposition}
+
+
+\DeclareMathOperator{\ringchar}{char}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\GL}{GL}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Zp}{\ensuremath{\mathbb{Z}_p}}
+\newcommand{\Qp}{\mathbb{Q}_p}
+\newcommand{\F}{\mathbb{F}}
+
+\newcommand{\ktimes}{k^\times}
+\newcommand{\Zptimes}{\Zp^\times}
+\newcommand{\Qptimes}{\Qp^\times}
+\newcommand{\Qpsquareclasses}{\frac{\Qptimes}{\Qpsq}}
+
+\newcommand{\ksq}{\left( \ktimes \right)^2}
+\newcommand{\Zpsq}{\left( \Zptimes \right)^2}
+\newcommand{\Qpsq}{\left( \Qptimes \right)^2}
+\newcommand{\sqclasses}{\frac{\ktimes}{\ksq}}
+\newcommand{\ksqclasses}{\frac{\ktimes}{\ksq}}
+\newcommand{\squareclasses}{\frac{\ktimes}{\ksq}}
+
+%\logo{\includegraphics[width=.05\textwidth, height = .1\textheight]{sb_logo_black.png}}%\vspace*{.88\paperheight}
+\setbeamertemplate{headline}{\hfill\includegraphics[scale = 0.2]{sb_logo_black.png}\hspace{0.2cm}\vspace{-1cm}}
+
+
+\AtBeginSection[] {
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents[currentsection]
+\end{frame}}
+
+
+
+\mode<presentation>
+
+\title{Intertemporal Discounting}
+\subtitle{Evolutionary methods and perspectives \\ \bigskip \includegraphics[scale = 0.5]{sb_logo_black.png} }
+\author{Eric Rozon \\  erozon@math.ubc.ca }
+\date{November 4, 2020}
+
+\begin{document}
+
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+\frame{\frametitle{Outline}\tableofcontents[pausesections]}
+
+\section{What is intertemporal discounting?}
+
+\subsection{Motivation}
+\begin{frame}
+    \frametitle{A dilemma}
+    \input{slides/cake_v_fruit.tex}
+\end{frame}
+
+
+
+%\subsection{Discounting problem in general}
+%
+%\begin{frame}
+%    \frametitle{Formalisms}
+%    \input{slides/general_discounting.tex}
+%\end{frame}
+
+
+
+\subsection{The discounting problem}
+\begin{frame}
+    \frametitle{Consider the following\dots}
+    \input{slides/interactive_example.tex}
+\end{frame}
+
+\subsection{Theory and empirics}
+
+\begin{frame}
+    \frametitle{Empirics}
+    \input{slides/empirics.tex}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Theory}
+    \input{slides/theory.tex}
+\end{frame}
+
+
+
+
+\section{Discounting in an evolutionary context}
+
+\subsection{Philosophy}
+\begin{frame}
+    \frametitle{Paradigme Shift}
+    \input{slides/paradigme_shift.tex}
+\end{frame}
+
+\subsection{Framework}
+
+\begin{frame}
+    \frametitle{Age as delay}
+    \input{slides/leslie_model.tex}
+\end{frame}
+
+\subsection{Example}
+\begin{frame}
+    \frametitle{Life history -- visual}
+    \input{slides/life_history_display.tex}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Goodbye}
+    \input{slides/conclusion.tex}
+\end{frame}
+
+\end{document} 
