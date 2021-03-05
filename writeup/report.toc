@@ -22,3 +22,6 @@
 \contentsline {section}{\numberline {9}Total Reproductive Output}{28}{section.9}
 \contentsline {section}{\numberline {10}Moran Squirrels}{29}{section.10}
 \contentsline {section}{\numberline {11}Squirrelly Bandits}{30}{section.11}
+\contentsline {section}{\numberline {12}Life History Discounting}{31}{section.12}
+\contentsline {subsection}{\numberline {12.1}Optimal distribution for $\rho $}{32}{subsection.12.1}
+\contentsline {subsection}{\numberline {12.2}Discounting in Squirrel Banking}{32}{subsection.12.2}
